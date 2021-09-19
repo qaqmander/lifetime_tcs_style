@@ -1,8 +1,23 @@
 \usepackage{amssymb}
 \usepackage{mathtools}
+\usepackage[ruled, linesnumbered]{algorithm2e}
 
 %% Tools to construct package
 \def\@emath{\ensuremath}
+
+%% Pseudo-code
+\def\SIO{\SetKwInOut}
+\def\SD{\SetKwData}
+\def\SF{\SetKwFunction}
+\newenvironment{myalg}{
+	\begin{algorithm}[H]
+	    \SetKwInOut{Oracle}{Oracle}
+	    \SetKwInOut{Parameter}{Paramenter}
+	    \SetKwInOut{Input}{Input}
+	    \SetKwInOut{Output}{Output}
+}{
+    \end{algorithm}
+}
 
 %% Absolute value and more
 % https://tex.stackexchange.com/a/43009
