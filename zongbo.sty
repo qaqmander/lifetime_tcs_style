@@ -1,0 +1,97 @@
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+%% Tools to construct package
+\def\@emath{\ensuremath}
+
+%% Absolute value and more
+% https://tex.stackexchange.com/a/43009
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\inner}{\langle}{\rangle} % bad name
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiterX{\set}[1]{\{}{\}}{\@renewmid#1}
+\DeclarePairedDelimiterX{\Set}[1]{\{}{\}}{\@renewmid\nonscript\,#1\nonscript\,} % \nonscript suppresses \, in (script)script style
+
+\let\@abs\abs
+\let\@ceil\ceil
+\let\@floor\floor
+\let\@inner\inner
+\let\@norm\norm
+\let\@set\set
+\let\@Set\Set
+
+\def\abs{\@ifstar{\@abs}{\@abs*}}
+\def\ceil{\@ifstar{\@ceil}{\@ceil*}}
+\def\floor{\@ifstar{\@floor}{\@floor*}}
+\def\inner{\@ifstar{\@inner}{\@inner*}}
+\def\norm{\@ifstar{\@norm}{\@norm*}}
+\def\set{\@ifstar{\@set}{\@set*}}
+\def\Set{\@ifstar{\@Set}{\@Set*}}
+
+%% Relationship symbol
+\newcommand{\divides}{\mid}
+\newcommand{\ndivides}{\nmid}
+\def\eqv{\equiv}
+\def\neqv{\not\equiv}
+
+%% Number field and more
+\def\ZZ{\@emath{\mathbb{Z}}}
+\def\ZZp{\@emath{\mathbb{Z}_p}}
+\def\FF{\@emath{\mathbb{F}}}
+\def\FFp{\@emath{\mathbb{F}_p}}
+\def\RR{\@emath{\mathbb{R}}}
+\def\QQ{\@emath{\mathbb{Q}}}
+\def\NN{\@emath{\mathbb{N}}}
+
+%% Sequence
+\newcommand{\seq}[2][n]{\@emath{ #2_1, #2_2, \dots, #2_#1 }}
+\newcommand{\seqlr}[3]{\@emath{ #3_#1, #3_{#1+1}, \dots, #3_#2 }}
+\def\prodn{\@emath{\prod_{i=1}^{n}}}
+\def\sumn{\@emath{\sum_{i=1}^{n}}}
+\newcommand{\prodlr}[3][i]{\@emath{\prod_{#1=#2}^{#3}}}
+\newcommand{\sumlr}[3][i]{\@emath{\sum_{#1=#2}^{#3}}}
+
+%% Acronym for Greek letters
+\def\lda{\lambda}
+\def\vep{\varepsilon}
+\def\ep{\epsilon}
+
+%% Name of algorithm
+\newcommand{\algname}[1]{\@emath{\textsc{#1}}}
+
+%% Parentheses and more
+%\newcommand{\lrp}[1]{\@emath{\left( #1 \right)}}   % ( )
+%\newcommand{\lrb}[1]{\@emath{\lbrace #1 \rbrace}}  % { }
+%\newcommand{\lrs}[1]{\@emath{\left[ #1 \right]}}   % [ ]
+\DeclarePairedDelimiter{\lrp}{(}{)}
+\DeclarePairedDelimiter{\lrb}{\lbrace}{\rbrace}
+\DeclarePairedDelimiter{\lrs}{[}{]}
+\let\@lrp\lrp
+\let\@lrb\lrb
+\let\@lrs\lrs
+\def\lrp{\@ifstar{\@lrp}{\@lrp*}}
+\def\lrb{\@ifstar{\@lrb}{\@lrb*}}
+\def\lrs{\@ifstar{\@lrs}{\@lrs*}}
+
+%% Probabilistic
+\newcommand\@E[1]{\@emath{\mathbb{E}\lrs{#1}}}
+\newcommand\@Es[1]{\@emath{\mathbb{E}\lrs*{#1}}}
+\newcommand\@Var[1]{\@emath{\mathbf{Var}\lrs{#1}}}
+\newcommand\@Vars[1]{\@emath{\mathbf{Var}\lrs*{#1}}}
+\newcommand\@Prob[1]{\@emath{\Pr\lrs{#1}}}
+\newcommand\@Probs[1]{\@emath{\Pr\lrs*{#1}}}
+\def\E{\@ifstar{\@Es}{\@E}}
+\def\Var{\@ifstar{\@Vars}{\@Var}}
+\def\Prob{\@ifstar{\@Probs}{\@Prob}}
+
+%% Other acronyms
+\def\f{\frac}
+\def\mb{\makebox}
+\def\Larr{\@emath{\Lightarrow}}
+\def\Rarr{\@emath{\Rightarrow}}
+\def\LRarr{\@emath{\Leftrightarrow}}
+\def\larr{\@emath{\rightarrow}}
+\def\rarr{\@emath{\lightarrow}}
+\def\lrarr{\@emath{\leftrightarrow}}
