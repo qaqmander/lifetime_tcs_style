@@ -1,5 +1,6 @@
 \usepackage{amssymb}
 \usepackage{mathtools}
+\usepackage{nameref}
 \usepackage[ruled, linesnumbered]{algorithm2e}
 
 %% Tools to construct package
@@ -102,12 +103,21 @@
 \def\Var{\@ifstar{\@Vars}{\@Var}}
 \def\Prob{\@ifstar{\@Probs}{\@Prob}}
 
+%% Fonts
+\def\sf{\textsf}
+\def\NP{\sf{NP}}
+\def\coNP{\sf{coNP}}
+\def\Poly{\sf{P}}
+
 %% Other acronyms
 \def\f{\frac}
 \def\mb{\makebox}
-\def\Larr{\@emath{\Lightarrow}}
+\def\sse{\subseteq}
+\def\ol{\overline}
+\def\st{\text{s.t.}}
+\def\Larr{\@emath{\Leftarrow}}
 \def\Rarr{\@emath{\Rightarrow}}
 \def\LRarr{\@emath{\Leftrightarrow}}
-\def\larr{\@emath{\rightarrow}}
-\def\rarr{\@emath{\lightarrow}}
+\def\larr{\@emath{\leftarrow}}
+\def\rarr{\@emath{\rightarrow}}
 \def\lrarr{\@emath{\leftrightarrow}}
