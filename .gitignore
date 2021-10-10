@@ -1,4 +1,5 @@
 *
 !.gitignore
 !*.sty
+!*.cls
 !README.md
