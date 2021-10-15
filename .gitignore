@@ -2,4 +2,5 @@
 !.gitignore
 !*.sty
 !*.cls
+!*.bib
 !README.md
