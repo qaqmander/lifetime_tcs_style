@@ -3,4 +3,5 @@
 !*.sty
 !*.cls
 !*.bib
+!*.tex
 !README.md
