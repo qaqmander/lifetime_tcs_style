@@ -6,10 +6,10 @@
 	
 %%% --- Linear Programming: Begin --- %%%
 $$
-\begin{array}{ll@{}ll}         % "@{}": declare new separator as empty string 
-\text{minimize}  & \displaystyle\sum\limits_{j=1}^{m} w_{j}&x_{j} &\\
-\text{subject to}& \displaystyle\sum\limits_{j:e_{i} \in S_{j}}   &x_{j} \geq 1,  &i=1 ,\dots, n\\
-                 &                                                &x_{j} \in \{0,1\}, &j=1 ,\dots, m
+\begin{array}{ll@{}ll}   % "@{}": declare new separator as empty string 
+\text{max}  & \dis\sum\limits_{e\in E} w_{e}&x_{e}        & \\
+\text{s.t.} & \dis\sum\limits_{e\ni v}      &x_{e} \le 1, &\forall v\in V \\
+            &                                             &x_{e} \in \{0,1\}, &\forall e\in E
 \end{array}
 $$
 %%% --- Linear Programming: End --- %%%
